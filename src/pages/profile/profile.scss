@@ -1,0 +1,31 @@
+
+    page-profile {
+        .header-image {
+            //background-image: url(https://ununsplash.imgix.net/photo-1421091242698-34f6ad7fc088?fit=crop&fm=jpg&h=650&q=75&w=950);
+            height:40vh;
+            filter: blur(5px);
+        }
+         
+        .main-content {
+            padding: 20px;
+            background-color: white;
+            width: 100%
+        }
+        .dp{
+            border: 6px solid #dfdfdf;
+            border-radius: 50%;
+            height: 40vw;
+            width: 40vw;
+            max-height: 300px;
+            max-width: 300px;
+            z-index: 10;
+            margin-top:-800px;
+            position: relative;
+            left:50%;
+            margin-right:-50%;
+            transform: translate(-50%,0%);
+            box-shadow: -3px 10px 50px 3px rgba(0,0,0,0.75);
+            background-size: cover;
+            background-color: #ecf0f1;
+        }
+    }
