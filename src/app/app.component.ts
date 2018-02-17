@@ -16,6 +16,7 @@ import { UserPage } from "../pages/user/user";
 import { CardSettingPage } from "../pages/card-setting/card-setting";
 import { LoginHomePage } from '../pages/login-home/login-home';
 import { ProfilePage } from '../pages/profile/profile';
+import { DomSanitizer } from '@angular/platform-browser';
 // end import pages
 
 @Component({
@@ -26,6 +27,8 @@ import { ProfilePage } from '../pages/profile/profile';
 })
 
 export class MyApp {
+  apellido: any;
+  name: any;
   rootPage: any;
   nav: any;
   user = {};
@@ -63,7 +66,7 @@ export class MyApp {
   ];
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public afAuth: AngularFireAuth,
-              public authService: AuthService) {
+              public authService: AuthService, private _sanitizer: DomSanitizer) {
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -107,5 +110,10 @@ export class MyApp {
     this.authService.logout().then(() => {
       this.nav.setRoot(LoginHomePage);
     });
+  }
+
+  getBackground(image) {
+    //console.log(`url(${image})`)
+    return this._sanitizer.bypassSecurityTrustStyle(`url(${image})`);
   }
 }

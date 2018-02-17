@@ -2,11 +2,28 @@
 
   <ion-content class="menu-left">
     <!-- User profile -->
-    <div text-center padding-top padding-bottom class="primary-bg menu-left">
+<!--     <div text-center padding-top padding-bottom class="primary-bg menu-left">
       <a (click)="viewProfile()" menuClose>
         <img class="profile-picture" src="{{ user.photoURL }}">
         <h4 ion-text color="light">{{ user?.displayName }} {{user?.plastname}}</h4>
       </a>
+    </div> -->
+
+    <div class="main-left-menu" [style.background-image]="getBackground(user.photoURL)">
+      <!-- <span>{{ user.photoURL || async}}</span>
+      <span>{{ user.name || async}}</span>
+      <span>{{ user.plastname || async}}</span> -->
+      <!--       <div class="botton-menu-bg">
+        <span >{{ name | uppercase}} {{ apellido | uppercase}}asdasd</span>
+      </div> -->
+      <ion-item class="botton-menu-bg">
+        <span>
+          {{ user.displayName | uppercase}} {{ user.plastname | uppercase}}
+        </span>
+        <button ion-button clear item-end icon-left large menuToggle (click)="viewProfile()">
+          <ion-icon name="md-create"></ion-icon>
+        </button>
+      </ion-item>
     </div>
 
     <ion-list class="list-full-border">

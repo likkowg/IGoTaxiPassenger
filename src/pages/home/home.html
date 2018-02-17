@@ -13,17 +13,17 @@
 </div> -->
 
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>I Go Taxi</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <!-- Show map here -->
   <div id="{{ mapId }}" [ngStyle]="{height: mapHeight + 'px'}"></div>
+
 
   <!--Choose origin and destination places-->
   <div class="map-overlay">
@@ -70,9 +70,9 @@
       </ion-item>
     </div>
 
-    <button ion-button block color="primary" [hidden]="destination" (click)="chooseDestination()">SOLICITAR TAXI
+    <button ion-button  block color="primary" [hidden]="destination" (click)="chooseDestination()">SOLICITAR TAXI
     </button>
-    <button ion-button block color="primary" [hidden]="!destination" (click)="book()">COFIRMAR</button>
+    <button ion-button  block color="primary" [hidden]="!destination" (click)="book()">COFIRMAR</button>
   </div>
 </ion-content>
 
